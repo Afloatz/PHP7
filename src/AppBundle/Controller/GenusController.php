@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Genus;
@@ -9,11 +11,22 @@ use AppBundle\Service\MarkdownTransformer;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class GenusController extends Controller
 {
+    /**
+     * @Route("/types")
+     */
+    public function typesExampleAction()
+    {
+        $genus = new Genus();
+        $genus->setName(4);
+        var_dump($genus);die;
+    }
+
     /**
      * @Route("/genus/new")
      */
