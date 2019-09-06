@@ -23,8 +23,8 @@ class GenusController extends Controller
     public function typesExampleAction()
     {
         $genus = new Genus();
-        $genus->setName(4);
-        var_dump($genus);die;
+        $genus->setName('Octupus');
+        var_dump($genus->getName());die;
     }
 
     /**

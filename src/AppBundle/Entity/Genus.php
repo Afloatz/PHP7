@@ -96,7 +96,7 @@ class Genus
         return $this->id;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
