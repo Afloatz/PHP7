@@ -24,7 +24,12 @@ class GenusController extends Controller
     {
         $genus = new Genus();
         $genus->setName('Octupus');
-        var_dump($genus->getName());die;
+
+        $genus->setFunFact('This is fun');
+        var_dump($genus->getFunFact());
+
+        $genus->setFunFact(null);
+        var_dump($genus->getFunFact());die;
     }
 
     /**
