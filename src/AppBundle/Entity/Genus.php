@@ -134,9 +134,10 @@ class Genus
         return $this->funFact;
     }
 
-    public function setFunFact(?string $funFact)
+    public function setFunFact(?string $funFact): void
     {
         $this->funFact = $funFact;
+        return;
     }
 
     public function getUpdatedAt()
