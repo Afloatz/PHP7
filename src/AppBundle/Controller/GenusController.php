@@ -125,7 +125,7 @@ class GenusController extends Controller
             $notes[] = [
                 'id' => $note->getId(),
                 'username' => $note->getUsername(),
-                'avatarUri' => '/images/'.$note->getUserAvatarFilename(),
+                'avatarUri' => $note->getUserAvatarUri(),
                 'note' => $note->getNote(),
                 'date' => $note->getCreatedAt()->format('M d, Y')
             ];

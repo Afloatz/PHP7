@@ -10,6 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class GenusNote
 {
+    private const AVATAR_FILE_PREFIX = '/images';
+    private const BLANK_AVATAR_FILENAME = 'blank.jpg';
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -56,6 +59,17 @@ class GenusNote
     public function getUserAvatarFilename()
     {
         return $this->userAvatarFilename;
+    }
+
+    public function getUserAvatarUri(): string
+    {
+        $filename = $this->getUserAvatarFilename();
+
+        if (!$filename) {
+            $filename = self::BLANK_AVATAR_FILENAME;
+        }
+
+        return self::AVATAR_FILE_PREFIX.'/'.$filename;
     }
 
     public function setUserAvatarFilename($userAvatarFilename)

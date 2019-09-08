@@ -153,9 +153,9 @@ class Genus
     }
 
     /**
-     * @return Collection|GenusNote[]
+     * @return ArrayCollection|GenusNote[]
      */
-    public function getNotes(): Collection
+    public function getNotes()
     {
         return $this->notes;
     }
