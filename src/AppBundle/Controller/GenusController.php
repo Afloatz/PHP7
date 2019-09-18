@@ -106,10 +106,14 @@ class GenusController extends Controller
         $recentNotes = $em->getRepository('AppBundle:GenusNote')
             ->findAllRecentNotesForGenus($genus);
 
+        $foodArray = ['shrimp', 'clams', 'lobsters', 'shark' ];
+        $food = new \ArrayObject($foodArray);
+
         return $this->render('genus/show.html.twig', array(
             'genus' => $genus,
             'funFact' => $funFact,
-            'recentNoteCount' => count($recentNotes)
+            'recentNoteCount' => count($recentNotes),
+            'recentlyAte' => $genus->feed($food)
         ));
     }
 
